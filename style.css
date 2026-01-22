@@ -1,0 +1,167 @@
+:root{
+  --bg:#0f1720;            /* deep charcoal */
+  --card:#0f1a17;          /* slightly lighter */
+  --muted:#9aa39a;         /* muted beige/green */
+  --accent:#6abf6b;        /* fresh green */
+  --accent-2:#aeb28a;      /* soft beige */
+  --text:#e9f3ec;          /* pale text */
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --max-width:1100px;
+  --container-padding:20px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#071013 120%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.55;
+  font-size:16px;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:var(--container-padding);
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(8,10,12,0.55), rgba(8,10,12,0.35));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.header-inner{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:var(--text);
+}
+.logo{height:44px;width:44px;object-fit:contain}
+.brand-text{font-weight:700;letter-spacing:0.2px}
+
+/* Nav */
+.primary-nav ul{
+  list-style:none;
+  display:flex;
+  gap:10px;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.primary-nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  transition:all .18s ease;
+}
+.primary-nav a:hover{color:var(--text); background:var(--glass); transform:translateY(-2px)}
+.cta{background:linear-gradient(90deg,var(--accent),#4fae4f); color:#07210b; padding:8px 14px;}
+
+/* Nav toggle (mobile) */
+.nav-toggle{display:none;background:none;border:0;padding:8px}
+.hamburger{display:block;width:22px;height:2px;background:var(--text);position:relative}
+.hamburger::before,.hamburger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--text);transition:all .18s}
+.hamburger::before{top:-7px} .hamburger::after{top:7px}
+
+/* Hero */
+.hero{padding:48px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+.hero-copy h1{font-size:2.1rem;margin:0 0 12px}
+.lead{color:var(--muted);font-weight:500;margin-bottom:18px}
+.hero-actions{display:flex;gap:12px;margin-bottom:14px}
+.btn{display:inline-block;text-decoration:none;border:0;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#4fae4f);color:#07210b}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+
+.trust-list{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);margin-top:8px}
+.trust-list li{list-style:none;background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;font-size:0.9rem}
+
+/* visual */
+.visual-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.6);position:relative}
+.visual-card img{width:100%;height:100%;object-fit:cover;display:block}
+.visual-badge{position:absolute;left:14px;bottom:14px;background:rgba(7,34,14,0.6);padding:8px 12px;border-radius:999px;color:var(--accent-2);font-weight:600;font-size:0.85rem}
+
+/* Sections */
+.section{padding:48px 0}
+.section h2{margin:0 0 10px;font-size:1.4rem}
+.muted{color:var(--muted)}
+.small{font-size:0.92rem}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.about-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Beliefs */
+.beliefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.belief{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:18px;border-radius:10px}
+
+/* Products / Share */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
+.product-card{background:var(--card);padding:0;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+.product-card img{width:100%;height:140px;object-fit:cover}
+.product-card h3{margin:12px 12px 6px}
+.product-card p{margin:0 12px 14px;color:var(--muted)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:start}
+.contact-links{display:flex;gap:12px;margin:12px 0}
+.social{display:inline-block;padding:8px 12px;background:rgba(255,255,255,0.02);border-radius:10px;color:var(--accent-2);text-decoration:none}
+.contact-form{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.contact-form label{display:block;margin-bottom:10px}
+.contact-form input, .contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.form-actions{display:flex;gap:10px;justify-content:flex-start;margin-top:8px}
+
+/* Footer */
+.site-footer{padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:28px}
+.footer-inner{display:flex;gap:14px;align-items:center;justify-content:space-between}
+.footer-nav a{color:var(--muted);text-decoration:none;margin-left:12px}
+
+/* Utilities */
+.footer-brand img{height:36px;margin-right:8px}
+.muted.small{color:var(--muted);font-size:0.9rem}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:repeat(2,1fr)}
+  .beliefs-grid{grid-template-columns:repeat(2,1fr)}
+  .primary-nav{display:none}
+  .nav-toggle{display:inline-flex}
+}
+
+@media (max-width:560px){
+  .products-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .beliefs-grid{grid-template-columns:1fr}
+  .hero-copy h1{font-size:1.6rem}
+  .header-inner{padding:10px 0}
+  .brand-text{display:none}
+}
+
+/* Subtle reveal animation */
+.reveal{opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease}
+.reveal.active{opacity:1;transform:none}
